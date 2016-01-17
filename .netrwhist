@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/madhupoolu/code/ios/MyRewards.xcworkspace'
+let g:netrw_dirhist_2='/Users/madhupoolu/code/EdXl/db'
+let g:netrw_dirhist_3='/Users/madhupoolu/code/EdXl/config'
+let g:netrw_dirhist_4='/Users/madhupoolu/code/EdXl/scripts/city.csv'
+let g:netrw_dirhist_5='/Users/madhupoolu/code/spring/teams2'
+let g:netrw_dirhist_6='/Users/madhupoolu'
+let g:netrw_dirhist_7='/Users/madhupoolu/.vim'
