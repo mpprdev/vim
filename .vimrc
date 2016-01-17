@@ -113,6 +113,8 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
+" disable netrw generation
+let g:netrw_dirhistmax = 0
 
 " execute pathogen#infect()
 syntax on
