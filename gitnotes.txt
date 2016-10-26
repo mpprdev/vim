@@ -5,8 +5,10 @@ sudo apt install vim-nox
 git clone https://github.com/mpprdev/vim.git ~/.vim
 ln -s ~/.vim/.vimrc ~/.vimrc
 
-# launch vim and type :BundleInstall
+# install Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+# launch vim and type :BundleInstall
 
 ###-----
 #original installation and push
