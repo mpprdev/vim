@@ -1,10 +1,14 @@
 # get the full featured vim
 sudo apt install vim-nox
 
-#to clone
+# to clone
 git clone https://github.com/mpprdev/vim.git ~/.vim
 ln -s ~/.vim/.vimrc ~/.vimrc
 
+# launch vim and type :BundleInstall
+
+
+###-----
 #original installation and push
 
 git remote add origin git@github.com:mpprdev/vim.git
