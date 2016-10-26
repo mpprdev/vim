@@ -1,6 +1,6 @@
 #to clone
 git clone https://github.com/mpprdev/vim.git ~/.vim
-ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/.vimrc ~/.vimrc
 
 #original installation and push
 
