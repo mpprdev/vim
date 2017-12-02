@@ -2,6 +2,11 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" F10 toggles paste mode so that pasted text comes in w/o autoindent. Press
+" F10 before and after pasting
+set pastetoggle=<F10>
+
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
@@ -137,12 +142,14 @@ Plugin 'tpope/vim-sensible'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " all of your plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 
+syntax enable
 set background=dark
 colorscheme solarized
 
