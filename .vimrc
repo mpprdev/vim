@@ -153,3 +153,12 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+" enable indent guides 
+let g:indent_guides_enable_on_vim_startup = 1
+
+" Shortcut to rapidly toggle `set list`  - show whitespace
+nmap <leader>l :set list!<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=space:˽,tab:▸\ ,eol:¬
+
