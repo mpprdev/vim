@@ -143,13 +143,62 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'lokikl/vim-ctrlp-ag'
+" " Plugin 'mileszs/ack.vim'
 
 " all of your plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+function! CommandCabbr(abbreviation, expansion)
+      execute 'cabbr ' . a:abbreviation . ' <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "' . a:expansion . '" : "' . a:abbreviation . '"<CR>'
+endfunction
+command! -nargs=+ CommandCabbr call CommandCabbr(<f-args>)
+" Use it on itself to define a simpler abbreviation for itself.
+" CommandCabbr ccab CommandCabbr
 
 syntax enable
 set background=dark
 colorscheme solarized
+
+" enable indent guides 
+let g:indent_guides_enable_on_vim_startup = 1
+
+" Shortcut to rapidly toggle `set list`  - show whitespace
+nmap <leader>l :set list!<CR>
+
+set encoding=utf-8
+set fileencoding=utf-8
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=space:˽,eol:¬
+
+"Ack.vim settings
+map <leader>a :ag 
+let g:ack_use_dispatch = 1
+let g:ack_use_cword_for_empty_search = 1
+
+"" Use ag
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" from https://github.com/lokikl/vim-ctrlp-ag
+"
+nnoremap <c-f> :CtrlPag<cr>
+vnoremap <c-f> :CtrlPagVisual<cr>
+nnoremap <leader>ca :CtrlPagLocate
+nnoremap <leader>cp :CtrlPagPrevious<cr>
+let g:ctrlp_ag_ignores = '--ignore .git
+    \ --ignore "deps/*"
+    \ --ignore "_build/*"
+    \ --ignore "node_modules/*"'
+" end 
 
