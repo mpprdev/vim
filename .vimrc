@@ -200,5 +200,7 @@ let g:ctrlp_ag_ignores = '--ignore .git
     \ --ignore "deps/*"
     \ --ignore "_build/*"
     \ --ignore "node_modules/*"'
-" end 
+"
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=space:˽,tab:▸\ ,eol:¬
 
