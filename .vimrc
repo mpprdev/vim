@@ -143,7 +143,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'lokikl/vim-ctrlp-ag'
+" Plugin 'lokikl/vim-ctrlp-ag'
 Plugin 'kshenoy/vim-signature'
 Plugin 'airblade/vim-gitgutter'
 
@@ -190,18 +190,11 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap <leader>f :Ag<SPACE>
 
-" from https://github.com/lokikl/vim-ctrlp-ag
-"
-nnoremap <c-f> :CtrlPag<cr>
-vnoremap <c-f> :CtrlPagVisual<cr>
-nnoremap <leader>ca :CtrlPagLocate
-nnoremap <leader>cp :CtrlPagPrevious<cr>
-let g:ctrlp_ag_ignores = '--ignore .git
-    \ --ignore "deps/*"
-    \ --ignore "_build/*"
-    \ --ignore "node_modules/*"'
-"
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=space:˽,tab:▸\ ,eol:¬
+
+
 
