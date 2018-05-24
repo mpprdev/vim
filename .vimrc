@@ -144,7 +144,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'lokikl/vim-ctrlp-ag'
-" " Plugin 'mileszs/ack.vim'
+Plugin 'kshenoy/vim-signature'
+Plugin 'airblade/vim-gitgutter'
 
 " all of your plugins must be added before the following line
 call vundle#end()            " required
